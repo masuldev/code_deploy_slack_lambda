@@ -31,9 +31,9 @@ func Handler(request SNSMessage) error {
 	attachment.AddField(AttachmentField{Title: "Deployment Group", Value: message.DeploymentGroupName, Short: true})
 	attachment.AddField(AttachmentField{Title: "Region", Value: message.Region, Short: true})
 	attachment.AddField(AttachmentField{Title: "Deployment Link", Value: fmt.Sprintf("https://%s.console.aws.amazon.com/codedeploy/home?region=%s#/deployments/%s", message.Region, message.Region, message.DeploymentId), Short: true})
-	attachment.AddField(AttachmentField{Title: "Create Time", Value: string(message.CreateTime), Short: true})
+	attachment.AddField(AttachmentField{Title: "Create Time", Value: fmt.Sprintf("%s",toKST(message.CreateTime)), Short: true})
 	if message.CompleteTime != "" {
-		attachment.AddField(AttachmentField{Title: "Complete Time", Value: string(message.CompleteTime), Short: true})
+		attachment.AddField(AttachmentField{Title: "Complete Time", Value: fmt.Sprintf("%s", toKST(message.CompleteTime)), Short: true})
 	} else {
 		attachment.AddField(AttachmentField{Title: "Complete Time", Value: "", Short: true})
 	}

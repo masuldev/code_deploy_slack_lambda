@@ -12,7 +12,7 @@ SNS, CodeDeploy, Lambda Example
 6) test!
 7) profit!
 
-###test json
+### test json
 ```json
 {
   "Records": [
@@ -29,4 +29,4 @@ SNS, CodeDeploy, Lambda Example
 }
 ```
 
-###! Have a nice day !
+### ! Have a nice day !
